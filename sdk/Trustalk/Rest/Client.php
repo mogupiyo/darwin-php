@@ -1,6 +1,6 @@
 <?php
 
-namespace Trustalk;
+namespace Trustalk\Rest;
 
 class Client
 {
