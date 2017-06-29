@@ -1,0 +1,10 @@
+{
+    "name": "sample-vendor/trustalk",
+    "description": "Trustalk REST API Client.",
+    "license": "MIT",
+    "autoload": {
+        "psr-0": {
+            "Trustalk\\": "src/"
+        }
+    }
+}
