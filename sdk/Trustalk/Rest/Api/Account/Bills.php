@@ -5,14 +5,14 @@ namespace Trustalk\Rest\Api\Account;
 use Trustalk\Rest\Client;
 use Trustalk\Http\CurlClient;
 
-class Account extends Client
+class Bills extends Client
 {
     protected $client;
     protected $curl;
-    protected $uri = '/account';
+    protected $uri = '/account/bills';
     /**
-     * Construct the Account
-     * @return Trustalk\Rest\Api\Account\Account
+     * Construct the Bills
+     * @return Trustalk\Rest\Api\Account\Bills
      */
     public function __construct(Client $client) {
         $this->curl = new CurlClient($client->credentials);

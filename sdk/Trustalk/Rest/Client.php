@@ -2,25 +2,40 @@
 
 namespace Trustalk\Rest;
 
-use Trustalk\Http\CurlClient;
-use Trustalk\VersionInfo;
-use Trustalk\Rest\Api\Account\AccountList as Account;
+use Trustalk\ClassPath;
 
+/**
+ * A client for accessing the Trustalk API.
+ *
+ * @property \Trustalk\Rest\Api\Account\Account account
+ * @property \Trustalk\Rest\Api\Connections\Tracks connections
+ * @property \Trustalk\Rest\Api\Calls\Response\Actions actions
+ * @property \Trustalk\Rest\Api\Calls\Response\Expiration expiration
+ * @property \Trustalk\Rest\Api\Calls\Response\Before before
+ * @property \Trustalk\Rest\Api\Calls\Logs logs
+ * @property \Trustalk\Rest\Api\Calls\Recordings recordings
+ */
 class Client
 {
-    protected $username;
-    protected $password;
+    protected $credentials;
 
+    /**
+     * Construct the client.
+     */
     public function __construct($username = null, $password = null)
     {
+        $this->credentials = [
+            'username' => $username,
+            'password' => $password
+        ];
     }
 
-    static function sample()
-    {
-        $array1 = array("testA" => 1, "testB" => 2);
-        $array2 = array("testC" => 3, "testD" => 4);
-        $test = $array1 + $array2;
-        var_dump("doyaaa");
-        return $test;
+    /**
+     * Magic method for create instance of property like.
+     */
+    public function __get($name) {
+        $className = ClassPath::get($name);
+        $instance = new $className($this);
+        return $instance;
     }
 }
