@@ -1,7 +1,11 @@
 {
     "name": "mogupiyo/darwin",
+    "type": "library",
     "description": "Trustalk REST API Client.",
     "license": "MIT",
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
     "autoload": {
         "psr-0": {
             "Trustalk\\": "sdk/"
