@@ -3,7 +3,7 @@
     "description": "Trustalk REST API Client.",
     "license": "MIT",
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "Trustalk\\": "sdk/"
         }
     }
