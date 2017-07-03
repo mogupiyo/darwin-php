@@ -1,5 +1,5 @@
 {
-    "name": "sample-vendor/trustalk",
+    "name": "mogupiyo/darwin",
     "description": "Trustalk REST API Client.",
     "license": "MIT",
     "autoload": {
