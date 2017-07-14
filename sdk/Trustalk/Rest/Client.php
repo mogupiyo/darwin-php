@@ -2,6 +2,7 @@
 
 namespace Trustalk\Rest;
 
+use Trustalk\Exceptions\TrustalkException;
 use Trustalk\ClassPath;
 
 /**
@@ -34,8 +35,10 @@ class Client
      * Magic method for create instance of property like.
      */
     public function __get($name) {
-        $className = ClassPath::get($name);
-        $instance = new $className($this);
-        return $instance;
+        $className = ClassPath::getFirstNest($name);
+        if (class_exists($className)) {
+            return new $className($this);
+        }
+        throw new TrustalkException('Unknown domain ' . $name);
     }
 }

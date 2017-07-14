@@ -38,8 +38,10 @@ class Before extends Client
      * PUT
      * @return json
      */
-    public function put($id, $data = null, $timeout = null) {
-        $this->uri = Util::pathParamId($this->uri, $id);
+    public function put($id = null, $data = null, $timeout = null) {
+        if ($id !== null) {
+            $this->uri = Util::pathParamId($this->uri, $id);
+        }
         return $this->curl->request(__FUNCTION__, $this->uri, $data, $timeout);
     }
 
