@@ -26,7 +26,7 @@ class ClassPath {
             'PurchaseNumber' => 'Trustalk\Rest\Api\Account\PurchaseNumber',
             'ReleaseNumber' => 'Trustalk\Rest\Api\Account\ReleaseNumber',
             'PhoneNumbers' => 'Trustalk\Rest\Api\Account\PhoneNumbers',
-            'Connections' => 'Trustalk\Rest\Api\Connections\Tracks',
+            'Tracks' => 'Trustalk\Rest\Api\Connections\Tracks',
             'Logs' => 'Trustalk\Rest\Api\Calls\Logs',
             'Recordings' => 'Trustalk\Rest\Api\Calls\Recordings',
             'Emails' => 'Trustalk\Rest\Api\Notifications\Emails',

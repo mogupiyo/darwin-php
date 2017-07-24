@@ -34,4 +34,13 @@ class Recordings extends Client
         return $this->curl->request(__FUNCTION__, $this->uri, $data, $timeout);
     }
 
+    /**
+     * DELETE
+     * @return json
+     */
+    public function delete($rsid, $timeout = null) {
+        $this->uri = Util::pathParamId($this->uri, $rsid);
+        return $this->curl->request(__FUNCTION__, $this->uri, $data, $timeout);
+    }
+
 }
